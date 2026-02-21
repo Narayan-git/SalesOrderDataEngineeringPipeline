@@ -1,9 +1,9 @@
 {
-	"name": "pipeline1",
+	"name": "pl_initial_full_data_load",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "cd_full_load",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -27,12 +27,8 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"writeBehavior": "upsert",
-						"upsertSettings": {
-							"useTempDB": false,
-							"interimSchemaName": "dbo"
-						},
-						"sqlWriterUseTableLock": false,
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": true,
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
