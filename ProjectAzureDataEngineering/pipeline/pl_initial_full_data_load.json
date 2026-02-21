@@ -27,14 +27,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"writeBehavior": "upsert",
-						"upsertSettings": {
-							"useTempDB": false,
-							"keys": [
-								"Branch_ID"
-							],
-							"interimSchemaName": ""
-						},
+						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": true,
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
@@ -57,7 +50,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Branch_ID",
+									"name": "BRANCH_ID",
 									"type": "String",
 									"physicalType": "nvarchar"
 								}
@@ -69,7 +62,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Dealer_ID",
+									"name": "DEALER_ID",
 									"type": "String",
 									"physicalType": "nvarchar"
 								}
@@ -81,7 +74,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Model_ID",
+									"name": "MODEL_ID",
 									"type": "String",
 									"physicalType": "nvarchar"
 								}
@@ -93,9 +86,11 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Revenue",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"name": "REVENUE",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 38
 								}
 							},
 							{
@@ -105,9 +100,11 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Units_Sold",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"name": "UNITS_SOLD",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 38
 								}
 							},
 							{
@@ -117,7 +114,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Date_ID",
+									"name": "DATE_ID",
 									"type": "String",
 									"physicalType": "nvarchar"
 								}
@@ -129,9 +126,9 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Day",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"name": "DAY",
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
@@ -141,9 +138,9 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Month",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"name": "MONTH",
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
@@ -153,9 +150,9 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Year",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"name": "YEAR",
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
@@ -165,7 +162,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "BranchName",
+									"name": "BRANCHNAME",
 									"type": "String",
 									"physicalType": "nvarchar"
 								}
@@ -177,7 +174,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "DealerName",
+									"name": "DEALERNAME",
 									"type": "String",
 									"physicalType": "nvarchar"
 								}
@@ -189,7 +186,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Product_Name",
+									"name": "PRODUCT_NAME",
 									"type": "String",
 									"physicalType": "nvarchar"
 								}
